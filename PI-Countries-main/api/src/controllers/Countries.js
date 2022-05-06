@@ -5,9 +5,9 @@ const {Country, Activity} = require ('../db');
 
 const countries = async () => {                                                       //Asincrono.
  try{
-     const api = await axios.get('https://restcountries.com/v3/all');                //Llamada a la api.
+     const api = await axios.get('https://restcountries.com/v3/all');                //Solicitud API.
      const apiCountries = await api.data.map( (e) =>{           
-        Country.findOrCreate({                                                       //Busca o crea en Base de datos.   
+        Country.findOrCreate({                                                       //Busca o crea=>Base de datos.   
                     where: {
                     name: e.name['common'],
                     cca3: e.cca3,
@@ -24,10 +24,11 @@ const countries = async () => {                                                 
 };
     
 
-const db = async () =>{
-    return await Country.findAll({                                                  //Todos los registros de la Base de datos.
+const getAll = async () =>{
+    await countries()
+    return await Country.findAll({                                                  
         include: {
-            model: Activity,                                                      //Incluyo el modelo Activities.
+            model: Activity,                                                      //Incluyo Activity
             attributes: ['name', 'difficulty', 'duration', 'season'],
             through: {
             attributes: []
@@ -37,16 +38,9 @@ const db = async () =>{
 };
 
 
-const getAll = async () =>{
-    await countries();                                                              //Espera y ejecuta.
-    const dbInfo = await db();                                                      
-    return dbInfo;                                                                 //Ya tengo todo en Base de datos, lo retorno.
-};
-
 
 module.exports ={
     countries,
-    db,
     getAll,
 };                                                                              
 

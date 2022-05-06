@@ -5,7 +5,7 @@ import React from "react";
 
 export function Paginado({countryForPage, allCountries, paginado}){
     const pageNumber = [];
-    for(let i = 1; i<=Math.ceil(allCountries/countryForPage); i++){              //math.ceil(todos los paises / paises por pagina)me devuelve el entero
+    for(let i = 1; i<=(allCountries/countryForPage); i++){              //Todos los paises / paises por pagina
         pageNumber.push(i)
     };
     return (

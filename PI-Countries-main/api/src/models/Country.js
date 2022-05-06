@@ -7,12 +7,12 @@ module.exports = (sequelize) => {
   sequelize.define('country', {
     name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false,                                                           //No puede ser nulo
     },
     cca3: {
       type: DataTypes.STRING,
       allowNull: false,
-      primaryKey: true,
+      primaryKey: true,                                                          //Identificacion unica
     },
     flags: {
       type: DataTypes.TEXT,
@@ -35,5 +35,5 @@ module.exports = (sequelize) => {
     population: {
       type: DataTypes.INTEGER
     }
-  },{timestamps: false});
+  },{timestamps: false});                                                             
 };

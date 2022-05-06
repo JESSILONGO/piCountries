@@ -18,12 +18,12 @@ import Activities from '../Activities/Activities';
 export default function Home(){
 
     const dispatch = useDispatch();
-    const allCountries = useSelector((state) => state.stateCountry);                 //Todo lo que esta en el estado.
-    const [currentPage, setCurrentPage] = useState(1);
-    const [countryForPage] = useState(10);
-    const indexLastCountry = currentPage * countryForPage;                                //10
-    const indexFirsCountry = indexLastCountry - countryForPage;                          //0
-    const currentCountries = allCountries.slice(indexFirsCountry, indexLastCountry);     //Divide el array
+    const allCountries = useSelector((state) => state.stateCountry);                      //Me trae todo
+    const [currentPage, setCurrentPage] = useState(1);                                   //Pag 0
+    const [countryForPage] = useState(10);                                              //10 por Pag.
+    const indexLastCountry = currentPage * countryForPage;                              //1 * 10 = 10
+    const indexFirsCountry = indexLastCountry - countryForPage;                         //10 - 10 = 0
+    const currentCountries = allCountries.slice(indexFirsCountry, indexLastCountry);    //Divido el array entre 0 y 10
     const [order, setOrder] = useState('');
     
     

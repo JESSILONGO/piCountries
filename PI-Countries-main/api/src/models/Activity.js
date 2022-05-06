@@ -1,4 +1,4 @@
-const {Sequelize, DataTypes} = require ('sequelize');
+const {DataTypes} = require ('sequelize');
 
 module.exports = (sequelize) => {
   sequelize.define('activity', {
@@ -7,7 +7,7 @@ module.exports = (sequelize) => {
     },
     difficulty: {
         type: DataTypes.INTEGER,
-        validate: {
+        validate: {                                                                //Unicos valores permitidos
             min: 1,
             max: 5,
         }
@@ -16,7 +16,7 @@ module.exports = (sequelize) => {
         type: DataTypes.INTEGER
     },
     season: {
-        type: DataTypes.ENUM('Summer', 'Autumn', 'Winter', 'Spring')
+        type: DataTypes.ENUM('Summer', 'Autumn', 'Winter', 'Spring')            //Unicos valores permitidos
     }
 });
 };
