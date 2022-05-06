@@ -57,11 +57,12 @@ export default function Form(){
     };
     
     function handleSelect(e){
+        e.preventDefault()
+        if(!input.countries.includes(e.target.value) && e.target.value !== 'countries')
         setInput({
             ...input,
             countries:[...input.countries, e.target.value]                                                                 //Concateno el valor del input
         })
-       // console.log(allActivities)
     };
 
     function handleDelete(e){

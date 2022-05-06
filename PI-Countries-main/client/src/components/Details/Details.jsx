@@ -31,8 +31,8 @@ export default function Details (){
              <h3>Subregion: {country.length? country[0].subregion : 'Loading...'}</h3>
              <h4>Area: {country.length? country[0].area : 'Loading...'}</h4>
              <h4>Population: {country.length? country[0].population : 'Loading...'}</h4>
-             <h4>Activities: {country.length && country[0].activities.length ? country[0].activities.map( a => 'name: ' + a.name + ', ' + 'difficulty: ' + a.difficulty + 
-             ', ' + 'duration: ' + a.duration + ', ' + 'season: ' + a.season) : 'No activities'}</h4>               
+             <h4>Activities: {country.length && country[0].activities.length ? country[0].activities.map( a => 'Name: ' + a.name + ', ' + 'difficulty: ' + a.difficulty + 
+             ', ' + 'duration: ' + a.duration + ', ' + 'season: ' + a.season + '.') : 'No activities'}</h4>               
             <div>
          <Link to= '/home'>
              <button>BACK</button>
