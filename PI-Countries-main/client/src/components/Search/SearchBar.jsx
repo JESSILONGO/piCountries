@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { getAll, getName } from '../../actions/index';
 import { useDispatch } from 'react-redux';
-import styles from './search.module.css'
+import styles from './search.module.css';
+import Swal from 'sweetalert2';
 
 function validate(name){
     let errors = {};
@@ -31,7 +32,7 @@ export default function SearchBar(){
     setErrors(validate(name))
     const errorSave= validate(name)
     if(Object.values(errorSave).length !== 0){
-        alert('Please, required a Country')
+        Swal.fire('Please, required a Country')
     }else{
         dispatch(getName(name))} 
         setName('')                                                                         //Estado local=>accion

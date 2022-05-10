@@ -1,9 +1,10 @@
+
 #img{
   background-image: url(https://thumbs.dreamstime.com/b/vector-de-mapa-mundial-aislado-en-fondo-blanco-planta-tierra-plana-plantilla-gris-para-el-dise%C3%B1o-sitios-web-patr%C3%B3n-del-sitio-163443620.jpg);
-  width: 95vw;
-  height: 110vw;
+  width: 100%;
+  height: 100%;
   margin:-10px;
-  margin-inline-start: 20px;
+  margin-inline-start: 5px;
   background-position: center;
   }
 
@@ -46,10 +47,16 @@
 }
 .p:hover{
   position: relative;
-  top: -1em;
-  left: 30em;
+  top: -17em;
+  left: 33em;
   border: 0;
   transform: scale(1.1);
   box-shadow: 0.1em 0.1em white;
+}
+
+#imagenL{
+  background-color: white;
+  position: relative;
+  top: -100px;
 }
 

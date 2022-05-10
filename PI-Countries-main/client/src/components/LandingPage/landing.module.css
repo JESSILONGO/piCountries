@@ -36,14 +36,14 @@
     width: 75px;
     margin: 150px 0px 100px 380px;
     border-radius: 10px;
-    border: 2px solid black; 
+    border: 1px solid white; 
     cursor: pointer;
     font-family: 'Roboto';
     font-style:oblique;
     font-size: large;
     font-weight: bold;
     text-align: center;
-    box-shadow: 0.1em 0.1em black;
+    box-shadow: 0.2em 0.2em rgba(0, 0, 0, 0.524);
 }
 .imgFondo button:hover{
     transform: scale(1.3);

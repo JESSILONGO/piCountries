@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate} from 'react-router-dom';
 import {getAll, postActivity } from '../../actions';
 import styles from './form.module.css'
+import Swal from 'sweetalert2';
 
 //Validaciones
 function validate(input){
@@ -77,10 +78,10 @@ export default function Form(){
     setErrors(validate(input))
     const errorSave= validate(input)
     if(Object.values(errorSave).length !== 0){
-        alert('Please, fullfil the required camps ')
+        Swal.fire({title:'Please, fullfil the required camps', icon:'info'})
     }else{
         dispatch(postActivity(input))
-        alert('Congratulations! cool creation...')
+        Swal.fire({ title:'Congratulations! cool creation...', icon:'success'})
     //Limpio input
     setInput({
         name: '',

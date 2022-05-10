@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
 export function getAll(){
     return async function(dispatch){
@@ -19,10 +20,13 @@ export function getName(name){
         }
         catch(error){
              if(error.response){
-                 alert(error.response.data)
-        }
+                Swal.fire({
+                    icon:'error',
+                    title:'Oops...',
+                    text:(error.response.data) 
+        })
     }
-}};
+}}};
 
 export function orderByName(payload){
         return ({

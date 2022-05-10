@@ -54,7 +54,7 @@ export default function Home(){
                 <button className={styles.button}><Link to='/activity'>CREATE ACTIVITY</Link></button>
                 </div>
                 {
-                    allCountries.length === 0? (<Loading setLoading={setLoading}/>)
+                    allCountries.length === 0? <p id={styles.imagenL}>(<Loading setLoading={setLoading}/>)</p>
                      : currentCountries.map(c =>{
                         return (
                             <div> 
@@ -101,6 +101,6 @@ export default function Home(){
                    </p>
                </div>
             </div>
-            </div>
+        </div>
      )
 };
