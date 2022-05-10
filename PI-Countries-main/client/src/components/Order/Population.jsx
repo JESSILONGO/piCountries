@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch} from "react-redux";
 import { filterPopulation, getAll } from "../../actions/index";
+import styles from './order.module.css'
 
 
 
@@ -22,10 +23,10 @@ function handlePopuChange(e) {
 
 
     return(
-            <div>Countries with lager and smaller populations:
-                <div> 
+            <div>
+                <div className={styles.order}> 
                 <select onChange={e => handlePopuChange(e)}>
-                    <option value='all' key='all'>No order</option>
+                    <option value='all' key='all'>Population</option>
                     <option value='Min' key= 'max'> Min - Max</option>
                     <option value='Max'key='min'>Max - Min</option>
                 </select>

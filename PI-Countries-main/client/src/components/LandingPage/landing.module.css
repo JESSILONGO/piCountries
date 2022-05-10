@@ -1,0 +1,52 @@
+
+.imgFondo{
+    background-color: gainsboro;
+    width: 100%;
+    height: 100%;
+    position:fixed;
+    left: 0px;
+    right: 0px;
+    top:0%;
+}
+.img{
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/bf/GIF_Mundo_Banderas.gif);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    position:fixed;
+    background-position: center;
+}
+
+.imgFondo p{
+    color: white;
+    text-shadow: 0.05em 0.05em black;
+    margin-top: 50px;
+    margin-left: 120px;
+    margin-right: 160px;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-style: inherit;
+    font-size: 40px;
+}
+
+.imgFondo button{
+    background-color: white;
+    color: black;
+    height: 40px;
+    width: 75px;
+    margin: 150px 0px 100px 380px;
+    border-radius: 10px;
+    border: 2px solid black; 
+    cursor: pointer;
+    font-family: 'Roboto';
+    font-style:oblique;
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0.1em 0.1em black;
+}
+.imgFondo button:hover{
+    transform: scale(1.3);
+    border:0;
+    box-shadow: 0.2em 0.2em grey;
+}

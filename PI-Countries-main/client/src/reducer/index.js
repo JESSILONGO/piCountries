@@ -1,5 +1,5 @@
 
-const inicialState = {
+const inicialState = {                                                              //Estados iniciales
     stateCountry: [],
     stateCountries: [],
     stateActivities: [],
@@ -8,7 +8,7 @@ const inicialState = {
 
 function reducer (state = inicialState, action){
     switch(action.type){
-        case 'GET_COUNTRIES':                                               
+        case 'GET_COUNTRIES':                                                                                                          
             return{
                 ...state,
                 stateCountry: action.payload, 
@@ -29,7 +29,7 @@ function reducer (state = inicialState, action){
             }
         case 'ORDER_BY_NAME':
                 const filterOrder = action.payload === "ascendente" ?                                //Payload=>value del componente
-                state.stateCountries.sort((a, b) => a.name.localeCompare(b.name))               //Compara=>retorna enteros
+                state.stateCountries.sort((a, b) => a.name.localeCompare(b.name))               //Compara cadenas en orden alfabetico=>retorna enteros
                 :  state.stateCountries.sort((a, b) => b.name.localeCompare(a.name));
             return {
                 ...state,
@@ -42,7 +42,7 @@ function reducer (state = inicialState, action){
             }         
         case 'FILTER_POPULATION':
                 const filterPopulation = action.payload === "Min" ?
-                state.stateCountries.sort(function (a, b){
+                state.stateCountries.sort(function (a, b){                                  //Ordena elementos de acuerdo a su valor.
                     return a.population - b.population
                 }) : 
                 state.stateCountries.sort(function (a, b){

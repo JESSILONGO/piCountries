@@ -3,7 +3,7 @@ import {getActivities, getAll} from '../../actions/index';
 import {useDispatch} from 'react-redux';
 import { useSelector } from 'react-redux';
 import { filterAct } from '../../actions/index';
-
+import styles from '../Activities/activities.module.css';
 
 
 
@@ -27,14 +27,14 @@ export default function Activities (){
 
 
     return (
-        <div>
+        <div className={styles.container}>
             {/* {console.log(allAct)} */}
             <select onChange={(e) => handleChangeAct(e)}>
-                <option value= 'all'>Search by activities...</option>
+                <option value= 'all'>Activities</option>
                 {
                     allAct.map(a => { 
                         return(
-                            <option value={a.name} key={a.name}>{a.name}</option>
+                            <option className={styles.container} value={a.name} key={a.name}>{a.name.toLowerCase()}</option>
                         )
                     }) 
                 }

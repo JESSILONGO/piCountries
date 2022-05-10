@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate} from 'react-router-dom';
-import { getActivities, getAll, postActivity } from '../../actions';
+import {getAll, postActivity } from '../../actions';
+import styles from './form.module.css'
 
 //Validaciones
 function validate(input){
@@ -22,7 +23,6 @@ function validate(input){
 export default function Form(){
     const dispatch = useDispatch();
     const allCountries = useSelector((state) => state.stateCountries);
-    const allActivities = useSelector((state) => state.stateActivities);
     const navigate = useNavigate();
     const [errors, setErrors] = useState({});
     
@@ -95,16 +95,14 @@ export default function Form(){
 
     useEffect(() =>{
         dispatch(getAll())
-        dispatch(getActivities())
     }, []);
 
     return(
-        <div>
-            <Link to= '/home'> <button>Back</button></Link>
-            <h1>Create Activity</h1>
-            <form
+        <div id={styles.container}>
+            <Link to= '/home'> <button className={styles.button}>BACK</button></Link>
+            <form className={styles.form}
              onSubmit={(e) => handleSubmit(e)}>
-            <div>
+            <div className={styles.containerName}>
                  <label>Name: </label>
                  <input 
                     placeholder='Ex(Surf...)'
@@ -117,10 +115,10 @@ export default function Form(){
                         <p>{errors.name}</p>
                     )}
             </div>
-            <div>
+            <div className={styles.containerDiff}>
                 <label>Difficulty: </label>
                 <input 
-                    placeholder='Ex(2...)'
+                    placeholder='1 to 5'
                     type='number'
                     max={5}
                     min={1}
@@ -132,7 +130,7 @@ export default function Form(){
                       <p>{errors.difficulty}</p>
                     )}
             </div>
-            <div>
+            <div className={styles.containerDur}>
                 <label>Duration: </label>
                 <input
                     placeholder='Ex(30...)'
@@ -146,42 +144,42 @@ export default function Form(){
                         <p>{errors.duration}</p>
                     )}
             </div>
-            <div>
-                <label>Season: </label>
-                <label><input  
+            <div className={styles.containerSeas}>
+                <label className={styles.label}>Season: </label>
+                <label className={styles.label1}><input  
                     type='radio'
                     value='Summer'
                     name= 'check'
                     onChange={(e) => handleCheck(e)}
                     />
-                   Summer
+                   summer
                 </label>
-                <label><input  
+                <label className={styles.label1}><input  
                     type='radio'
                     value='Autumn'
                     name='check'
                     onChange={ (e) => handleCheck(e)}
                     />
-                   Autumn
+                   autumn
                 </label>
-                <label><input
+                <label className={styles.label1}><input
                     type='radio'
                     value='Winter'
                     name='check'
                     onChange={ (e) => handleCheck(e)}
                     />
-                   Winter
+                   winter
                 </label>
-                <label><input 
+                <label className={styles.label1}><input 
                     type='radio'
                     value='Spring'
                     name='check'
                     onChange={(e) => handleCheck(e)}
                     />
-                   Spring
+                   spring
                 </label>
             </div>
-            <div>
+            <div className={styles.containerC}>
                 <select 
                     onChange={(e) => handleSelect(e)}>
                 <option value='country'>Countries...</option>
@@ -191,7 +189,7 @@ export default function Form(){
                     )} 
                 </select>
             </div>
-            <div>
+            <div className={styles.containerB}>
                 <p>
                  <button type='submit '>CREATE</button>
                 </p>

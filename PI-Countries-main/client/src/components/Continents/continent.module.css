@@ -1,0 +1,22 @@
+
+.continent{
+    display: flex;
+}
+.continent select{
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color:cadetblue;
+    color: white;
+    height: 25px;
+    border: 2px double grey;
+    box-shadow: 0.2em 0.2em rgba(128, 128, 128, 0.462);
+    width: 130px;
+    font-size: smaller;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+}
+.continent select:hover{
+    color:cadetblue;
+    background-color: white;
+
+}

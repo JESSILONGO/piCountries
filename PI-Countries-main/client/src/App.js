@@ -6,11 +6,14 @@ import {Routes} from 'react-router-dom';
 import Form from './components/Form/Form';
 import Details from './components/Details/Details';
 
+
+
+
 //componenete contenedor, le puedo pasar un unico elemento, por eso englobo
 function App() {
   return (
     <BrowserRouter>
-    <div className="App">
+    <div>
       <Routes>
       <Route exact path='/' element={<LandingPage />}/>
       <Route exact path='/home' element={<Home />}/>

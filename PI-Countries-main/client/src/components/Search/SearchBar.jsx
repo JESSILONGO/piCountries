@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { getAll, getName } from '../../actions/index';
 import { useDispatch } from 'react-redux';
+import styles from './search.module.css'
 
 function validate(name){
     let errors = {};
     if(!name || isNaN(name) !== true){
-     errors.name = 'Requires a country'
+     errors.name = 'Requires a country'                             
     }
     return errors;
 };
@@ -21,7 +22,8 @@ export default function SearchBar(){
     
     function handleInput(e){
         e.preventDefault()
-        setName(e.target.value)                                                        //Seteo en name al input                                           
+        setName(e.target.value)                                                 //Seteo en name al input
+        setErrors(validate(name))                                                                                                   
     };
 
     const handleSubmit = (e) =>{
@@ -29,7 +31,7 @@ export default function SearchBar(){
     setErrors(validate(name))
     const errorSave= validate(name)
     if(Object.values(errorSave).length !== 0){
-        alert('Please, required a Country ')
+        alert('Please, required a Country')
     }else{
         dispatch(getName(name))} 
         setName('')                                                                         //Estado local=>accion
@@ -41,22 +43,22 @@ export default function SearchBar(){
     };                                                        
 
     return (
-        <div>
+        <div className={styles.searchContainer}>
             <input
                 value={name}
-                required autoComplete='off'
                 type='text'
                 placeholder='Name: (ex: Argentina...)'
                 onChange={(e) => handleInput(e)}/>
-             <button type='submit'onClick={(e) => handleSubmit(e)}>
-                 SEARCH COUNTRY</button>
-            <div>
-                <p>
+                {errors.name && (
+                        <p id={styles.error}>{errors.name}</p>
+                    )}
+                    <ul className={styles.btns}>
+                 <button  type='submit'onClick={(e) => handleSubmit(e)}>
+                 SEARCH </button>
                  <button onClick={e => handleClick(e)}>                             
-                  RECHARGE COUNTRIES
+                  RECHARGE 
                  </button>
-                </p>
-            </div>
+                 </ul>
         </div>
     )
 };

@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import {filterContinent} from '../../actions/index';
 import { useDispatch } from 'react-redux';
+import styles from './continent.module.css'
 
 
 export function Continents (){
@@ -18,9 +19,9 @@ export function Continents (){
         dispatch(filterContinent(e.target.value))                                      //Action=>payload => el value de las options
      };
         return (
-            <nav>
+            <nav className={styles.continent}>
                 <select onChange={e => handleChange(e)}>
-                       <option value='all'>Search by continent... </option>
+                       <option  value='all'>Continents</option>
                         { 
                            continent.map(c=>
                         <option key={c.toString()} value={c}>{c}</option>)

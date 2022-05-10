@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch} from "react-redux";
 import {getAll, orderByName} from '../../actions/index';
+import styles from './order.module.css'
 
 
 
@@ -17,13 +18,13 @@ export default function Order({setOrder, setCurrentPage}){
         dispatch(getAll())
         setCurrentPage(1)                                                                   
         setOrder(e.target.value)
-    }                                                              //Setea=>estado vacio=>ordenado
+    }                                                              //Setea=>estado vacio=>ordenado dependiento del value
 };
     return(
-            <div>Countries in alphabetical order: 
-                <div>
+            <div> 
+                <div className={styles.order}>
                 <select onChange={e => handleOrdChange(e)}>
-                    <option value='all' key= 'all'> No order</option>
+                    <option  value='all' key='all'> Alphabetically</option>
                     <option value='ascendente' key= 'ascendente'> A - Z </option>
                     <option value='descendente'key='descendente'> Z - A </option>
                 </select>

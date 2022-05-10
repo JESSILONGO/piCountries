@@ -1,0 +1,22 @@
+
+
+.container{
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+    flex-direction: row;
+}
+
+.container button{
+    background-color: cadetblue;
+    border: 2px solid cadetblue;
+    margin-right: 1px;
+    width: 30px;
+    box-shadow: 0.1em 0.1em grey;
+    color: white;
+    cursor: pointer;
+}
+
+.container button:hover{
+    transform: scale(1.1);
+}

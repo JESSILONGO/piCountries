@@ -1,0 +1,158 @@
+
+#container{
+    background-image:url(https://travel1tours.com/wp-content/uploads/2020/07/lugares-turisticos-lima.jpg);
+    width: 100vw;
+    height: 48vw; 
+    margin:-10px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.button{
+    margin-block-start: 50px;
+    margin-inline-start: 200px;
+    background-color: cadetblue;
+    color: white;
+    box-shadow: 0.3em 0.3em rgba(128, 128, 128, 0.462);
+    border: 1px solid grey;
+    width: 70px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', monospace;
+    cursor: pointer;
+}
+
+.button:hover{
+    transform: scale(1.1);
+}
+
+.form{
+    margin-block-start: 100px;
+    margin-inline-start: 400px;
+    border: 1px solid white;
+    margin-inline-end: 310px;
+    height: 250px;
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.738);
+}
+
+.containerName{
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-block-end: 15px;
+}
+
+.containerName label{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.containerName input{
+    font-style: italic;
+    margin-inline: 25px;
+    border: 1.5px solid black;
+    width: 100px;
+    height: 15px;
+}
+
+.containerName p{
+    color: red;
+    font-size: small;
+}
+
+.containerDiff{
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-block-end: 15px;
+}
+.containerDiff label{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.containerDiff input{
+    font-style: italic;
+    margin-inline: 3px;
+    border: 1.5px solid black;
+    width: 100px;
+    height: 15px;
+}
+.containerDiff p{
+    color: red;
+    font-size: small;
+}
+
+.containerDur{
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-block-end: 15px;
+}
+.containerDur label{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.containerDur input{
+    font-style: italic;
+    margin-inline: 6px;
+    border: 1.5px solid black;
+    width: 100px;
+    height: 15px;
+}
+.containerDur p{
+    color: red;
+    font-size: small;
+}
+
+.containerSeas{
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-block-end: 15px;
+}
+
+.label{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.label1{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size:smaller;
+    font-weight:lighter;
+}
+
+.containerC{
+    margin-left: 10px;
+}
+.containerC select{
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color:cadetblue;
+    color: white;
+    height: 25px;
+    border: 2px double grey;
+    box-shadow: 0.2em 0.2em rgba(128, 128, 128, 0.462);
+    width: 130px;
+    font-size: smaller;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+}
+.containerC select:hover{
+    color:cadetblue;
+    background-color: white;
+}
+
+.containerB{
+    margin-left: 160px;
+}
+.containerB button{
+    background-color: cadetblue;
+    border: 5px double grey;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    width: 90px;
+    font-size: large;
+    font-weight: lighter;
+    box-shadow: 0.2em 0.2em rgba(128, 128, 128, 0.519);
+    color: white;
+    cursor: pointer;
+}
+
+.containerB button:hover{
+    transform: scale(1.2);
+    border: 0;
+    box-shadow: 0.01em 0.01em white;
+}

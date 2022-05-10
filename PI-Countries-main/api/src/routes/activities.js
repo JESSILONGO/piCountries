@@ -27,7 +27,7 @@ ruteA.post('/', async (req, res) =>{
             }
         })
         if(!validateAct){               
-        const createActivity = await Activity.create(newActivity)                     //Creo                                                 //Busco el match con el country
+        const createActivity = await Activity.create(newActivity)                     //Creo                              
         let matchCountry = await Country.findAll({
             where: {
                 name: countries

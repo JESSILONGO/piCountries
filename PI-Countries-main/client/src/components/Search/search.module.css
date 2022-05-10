@@ -1,0 +1,43 @@
+
+.searchContainer{
+    display:initial;
+    text-align: right;
+    margin: -50px;
+}
+
+.searchContainer input{
+    font-style: italic;
+    border: 1px solid cadetblue;
+    box-shadow: 0.1em 0.1em cadetblue;
+    margin-left: 50px;
+}
+
+.btns{
+    height: 25px;
+    width: 80px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    cursor:pointer; 
+}
+.btns button{
+    background-color:cadetblue;
+    border: 2px double grey;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    margin-block-end: 7px;
+    cursor: pointer;
+    height: 25px;
+    width: 70px;
+    box-shadow: 0.2em 0.2em rgba(128, 128, 128, 0.462);
+}
+.btns:hover{
+    transform: scale(1.1);
+}
+
+#error{
+    color: red;
+    font-size:small;
+    display: inline-block;
+}
+
