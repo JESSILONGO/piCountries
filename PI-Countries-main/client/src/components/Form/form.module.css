@@ -156,3 +156,33 @@
     border: 0;
     box-shadow: 0.01em 0.01em white;
 }
+
+.delete{
+    margin-left: 30px;
+    margin-block-end: 60px;
+    margin-block-start: -50px;
+}
+
+.delete p{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border: 2px solid green;
+    margin-right: 200px;
+    background-color: cadetblue;
+    text-align: center;
+    color: white;
+    letter-spacing: 0.1em;
+    width: 80px;
+}
+
+.delete button{
+    margin-left: 18px;
+    margin-block-start: -20px;
+    background-color: white;
+    color: red;
+    border: 1px solid red;
+    font-weight: bold;
+    width: 22px;
+    height: 18px;
+    text-align: center;
+    box-shadow: 0.1em 0.1em rgba(255, 0, 0, 0.572);
+}

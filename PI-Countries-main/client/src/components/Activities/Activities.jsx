@@ -28,11 +28,11 @@ export default function Activities (){
 
     return (
         <div className={styles.container}>
-            {/* {console.log(allAct)} */}
+            {console.log(allAct)}
             <select onChange={(e) => handleChangeAct(e)}>
                 <option value= 'all'>Activities</option>
                 {
-                    allAct.map(a => { 
+                    allAct.map(a => { (console.log(a.name))
                         return(
                             <option className={styles.container} value={a.name} key={a.name}>{a.name.toLowerCase()}</option>
                         )

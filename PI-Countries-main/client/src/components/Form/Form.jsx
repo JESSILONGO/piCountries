@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate} from 'react-router-dom';
-import {getAll, postActivity } from '../../actions';
+import {getActivities, getAll, postActivity } from '../../actions';
 import styles from './form.module.css'
 import Swal from 'sweetalert2';
 
@@ -36,6 +36,11 @@ export default function Form(){
         countries: [] 
     });
 
+    useEffect(() =>{
+        dispatch(getAll())
+        dispatch(getActivities())
+    }, [dispatch]);
+
     function handleChange(e){
         setInput({
             ...input,
@@ -59,7 +64,7 @@ export default function Form(){
     
     function handleSelect(e){
         e.preventDefault()
-        if(!input.countries.includes(e.target.value) && e.target.value !== 'countries')
+        if(!input.countries.includes(e.target.value) && e.target.value !== 'country')
         setInput({
             ...input,
             countries:[...input.countries, e.target.value]                                                                 //Concateno el valor del input
@@ -93,10 +98,6 @@ export default function Form(){
     navigate('/home')
     };
     
-
-    useEffect(() =>{
-        dispatch(getAll())
-    }, []);
 
     return(
         <div id={styles.container}>
@@ -195,14 +196,14 @@ export default function Form(){
                  <button type='submit '>CREATE</button>
                 </p>
             </div>
-            </form>
                  {/* para ver que selecciono */}
                     { input.countries.map(e =>
-                        <div>
-                            <p>{e}</p>
-                            <button onClick={() => handleDelete(e)}>X</button> 
+                        <div className={styles.delete}>
+                            <p>{e}</p> 
+                            <button onClick={() => handleDelete(e)}>X</button>
                         </div>
                     )}
+            </form>
         </div>
     )
 };
