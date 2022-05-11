@@ -1,7 +1,7 @@
 import React from 'react';
 import {useState, useEffect } from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {getAll} from '../../actions/index';
+import {getActivities, getAll} from '../../actions/index';
 import {Link} from 'react-router-dom';
 import Card from '../Card/Card';
 import { Continents} from '../Continents/Continents';
@@ -38,6 +38,7 @@ export default function Home(){
     useEffect(() =>{
         dispatch(getAll())                                                             //Despacho=>function=>todos los paises.
         dispatch(filterContinent())                                                  //Despacho=>function=>filtrado por continente.                                                         
+        // dispatch(getActivities())
     },[dispatch]);
 
 

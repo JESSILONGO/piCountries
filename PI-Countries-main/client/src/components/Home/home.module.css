@@ -5,7 +5,7 @@
   height: 100%;
   margin:-10px;
   margin-inline-start: 5px;
-  background-position: center;
+  background-position: 35% 100%;
   }
 
   .containerBut{
@@ -31,7 +31,7 @@
 
 .paginado{
   margin-left: 15%;
-  width: 100%;
+  width: 70%;
 }
 
 .p{

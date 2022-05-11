@@ -37,8 +37,8 @@ export default function Form(){
     });
 
     useEffect(() =>{
-        dispatch(getAll())
         dispatch(getActivities())
+        dispatch(getAll())
     }, [dispatch]);
 
     function handleChange(e){
