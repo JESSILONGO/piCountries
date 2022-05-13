@@ -82,8 +82,16 @@ export default function Form(){
     e.preventDefault(e)
     setErrors(validate(input))
     const errorSave= validate(input)
-    if(Object.values(errorSave).length !== 0){
+    if(Object.values(errorSave).length !== 0 || input.countries.length < 1){
         Swal.fire({title:'Please, fullfil the required camps', icon:'info'})
+        navigate('/activity')
+        setInput({
+            name: '',
+            difficulty: '',
+            duration: '',
+            season: '',
+            countries: [] 
+        })
     }else{
         dispatch(postActivity(input))
         Swal.fire({ title:'Congratulations! cool creation...', icon:'success'})
@@ -94,8 +102,9 @@ export default function Form(){
         duration: '',
         season: '',
         countries: []  
-    })}
+    })
     navigate('/home')
+    }
     };
     
 

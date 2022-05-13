@@ -47,6 +47,12 @@ export function getDetails(id){
             catch(error){console.log(error)}
         }
 };
+
+export function setStateDetail(){
+    return {
+        type: 'SET_DETAIL'
+    }
+};
     
 export function filterContinent(payload){                                           //payload=>component
     //console.log(payload)
@@ -86,4 +92,32 @@ export function filterAct(payload){
             payload
         }
 };
+export function getDeleteActivities(){
+    return async function(dispatch){
+       const getDAct = await axios.get('http://localhost:3001/delete')
+        return dispatch({
+            type: 'GET_DELETE',
+            payload: getDAct.data
+        })
+    }
+};
+
+export function deleteAct(payload){
+        return async function(dispatch){
+            try{
+                const res = await axios.delete('http://localhost:3001/delete?name=' + payload)
+            return res
+            }
+            catch(error){
+                if(error.response.data){
+                    Swal.fire({
+                        icon:'error',
+                        title:'Oops...',
+                        text:(error.response.data) 
+            })
+                }
+            }
+            }
+};
+
 

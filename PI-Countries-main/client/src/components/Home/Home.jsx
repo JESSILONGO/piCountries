@@ -37,8 +37,8 @@ export default function Home(){
                                                                                              
     useEffect(() =>{
         dispatch(getAll())                                                             //Despacho=>function=>todos los paises.
-        dispatch(filterContinent())                                                  //Despacho=>function=>filtrado por continente.                                                         
-        // dispatch(getActivities())
+        dispatch(filterContinent())                                                                                                           
+        dispatch(getActivities())
     },[dispatch]);
 
 
@@ -52,7 +52,8 @@ export default function Home(){
                  />
             </div>
             <div className={styles.containerBut}>
-                <button className={styles.button}><Link to='/activity'>CREATE ACTIVITY</Link></button>
+                <button className={styles.button}><Link to='/activity'>CREATE</Link></button>
+                <button className={styles.button}><Link to= '/delete'>DELETE</Link></button>
                 </div>
                 {
                     allCountries.length === 0? <p id={styles.imagenL}>(<Loading setLoading={setLoading}/>)</p>
@@ -66,7 +67,8 @@ export default function Home(){
                 }
             <div>
                 <p>
-                <Continents />
+                <Continents 
+                setCurrentPage={setCurrentPage}/>
                 </p>
             </div>
             <div>

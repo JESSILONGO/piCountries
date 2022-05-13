@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getDetails } from '../../actions/index';
+import { getDetails, setStateDetail } from '../../actions/index';
 import { Link, useParams } from 'react-router-dom';
 import styles from './details.module.css';
 import Loading from '../Loading/loading'
@@ -18,22 +18,23 @@ export default function Details (){
   
  
 
- useEffect(() =>{
+ useEffect(() =>{ 
      dispatch(getDetails(id))
+     return () => {dispatch(setStateDetail())}                                  //fijate return
  },[dispatch, id]);
 
  
  
-console.log(country, 'GET_DETAIL')
+// console.log(country, 'GET_DETAIL')
 
  return (
      <div>
          { loading === true? (<Loading setLoading={setLoading}/>) :
     <div className={styles.container}> 
          <div className={styles.containerB}>
-            {console.log(country)}
+            {/* {console.log(country)} */}
              <h1 className={styles.name}>Country:{country.length ? country[0].name : 'Loading...'} </h1> 
-             {console.log(country)}
+             {/* {console.log(country)} */}
              <h6>ID: {country.length? country[0].cca3 : 'Loading...'}</h6>
              <img src={country.length? country[0].flags : 'Loading...'} alt='' />
              <h2 className={styles.a}>Continent: {country.length?country[0].region : 'Loading...'}</h2>

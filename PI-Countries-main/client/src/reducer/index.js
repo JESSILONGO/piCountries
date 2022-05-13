@@ -4,6 +4,7 @@ const inicialState = {                                                          
     stateCountries: [],
     stateActivities: [],
     stateDetail: {},
+    stateDelete: []
     };
 
 function reducer (state = inicialState, action){
@@ -39,6 +40,11 @@ function reducer (state = inicialState, action){
             return{
                 ...state,
                 stateDetail: action.payload
+            }
+        case 'SET_DETAIL':
+            return{
+                ...state,
+                stateDetail: {}
             }         
         case 'FILTER_POPULATION':
                 const filterPopulation = action.payload === "Min" ?
@@ -68,7 +74,16 @@ function reducer (state = inicialState, action){
             return{
                 ...state,
                 stateCountry: filterAct
-            }                       
+            } 
+        case 'GET_DELETE':
+            return{
+                ...state,
+                stateDelete: action.payload
+            }
+        case 'ACTIVITY_DELETE':
+            return{
+                ...state
+            }                    
         default: 
             return{
                 ...state

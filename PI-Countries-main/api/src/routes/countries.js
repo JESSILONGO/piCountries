@@ -2,7 +2,7 @@ const express = require ('express');
 const rute = express.Router();
 const {getAll} = require ('../controllers/Countries');
 
-rute.get('/', async (req, res) =>{                                                                                
+rute.get('/', async (req, res) =>{                                                                            
     let {name} = req.query;                                                     
     if(!name){                                                                  //Si no recibo name por query.
         let countries = await getAll();                                        //Me traigo todo.

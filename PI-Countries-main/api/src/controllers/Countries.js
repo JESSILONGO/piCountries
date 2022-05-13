@@ -6,7 +6,7 @@ const {Country, Activity} = require ('../db');
 const countries = async () => {                                                       //Asincrono.
  try{
      const api = await axios.get('https://restcountries.com/v3/all');                //Solicitud API.
-     const apiCountries = await api.data.map( (e) =>{           
+      await api.data.map( (e) =>{           
         Country.findOrCreate({                                                       //Busca o crea=>Base de datos.   
                     where: {
                     name: e.name['common'],

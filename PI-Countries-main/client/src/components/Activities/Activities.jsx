@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import {getActivities, getAll} from '../../actions/index';
+import {getActivities, getAll, getDeleteActivities} from '../../actions/index';
 import {useDispatch} from 'react-redux';
 import { useSelector } from 'react-redux';
 import { filterAct } from '../../actions/index';
@@ -13,6 +13,7 @@ export default function Activities (){
 
     useEffect(() =>{
         dispatch(getActivities())
+        dispatch(getDeleteActivities())
     },[dispatch]);
 
     function handleChangeAct(e){
@@ -23,6 +24,7 @@ export default function Activities (){
           dispatch(getAll())
         }                                                                 
     };
+    
 
 
 

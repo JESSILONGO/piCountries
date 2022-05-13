@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch} from "react-redux";
-import {getAll, orderByName} from '../../actions/index';
+import {filterContinent, getAll, orderByName} from '../../actions/index';
 import styles from './order.module.css'
 
 
@@ -20,6 +20,11 @@ export default function Order({setOrder, setCurrentPage}){
         setOrder(e.target.value)
     }                                                              //Setea=>estado vacio=>ordenado dependiento del value
 };
+
+    useEffect(() =>{
+        dispatch(filterContinent)
+    },[dispatch])
+    
     return(
             <div> 
                 <div className={styles.order}>

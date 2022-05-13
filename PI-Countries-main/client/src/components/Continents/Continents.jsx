@@ -1,11 +1,11 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import {filterContinent} from '../../actions/index';
+import {filterContinent, getAll} from '../../actions/index';
 import { useDispatch } from 'react-redux';
 import styles from './continent.module.css'
 
 
-export function Continents (){
+export function Continents ({setCurrentPage}){
     const dispatch = useDispatch();
     let allCountries = useSelector((state) => state.stateCountries);
     let allContinents = allCountries.map(c => c.region);
@@ -17,7 +17,9 @@ export function Continents (){
     function handleChange(e){
          e.preventDefault()
         dispatch(filterContinent(e.target.value))                                      //Action=>payload => el value de las options
-     };
+        setCurrentPage(1)
+    };
+
         return (
             <nav className={styles.continent}>
                 <select onChange={e => handleChange(e)}>

@@ -21,8 +21,9 @@
   font-family:  Impact, Haettenschweiler, 'Arial Narrow Bold', monospace;
   letter-spacing: 0.1em;
   font-size: medium;
-  margin-top: 15px;
-  margin-bottom: 5px;
+  margin-top: 5px;
+  margin-left: 10px;
+  width: 80px;
 }
 
 .button:hover{
@@ -59,4 +60,5 @@
   position: relative;
   top: -100px;
 }
+
 
