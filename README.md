@@ -13,7 +13,7 @@ Filtrados y ordenamientos:
 -Ordenar paises por indice alfabetico.
 -Paginado para ver/buscar de a diez paises.
 
-Interfaz:
+# Interfaz:
 -Pagina inicial (Landig Page) representativa del proyecto, con login de terceros (Google- Auth0)
 -Ruta principal (Home) con listado de paises (Nombre, continente y bandera) Botones (Ordenamientos, busqueda, creacion y eliminacion de actividades)
 -Ruta de detalle (ID) detalle particular de un Pais (Nombre, continente, bandera, poblacion, etc.)
